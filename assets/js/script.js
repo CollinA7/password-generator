@@ -49,7 +49,7 @@ function passwordCriteria() {
 
     if (characterConfirm === "UPPER" || characterConfirm === "upper") {
 
-      const string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      var string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
       var stringLength = string.length;
 
@@ -61,7 +61,7 @@ function passwordCriteria() {
 
     if (characterConfirm === "LOWER" || characterConfirm === "lower") {
 
-      const string = "abcdefghijklmnopqrstuvwxyz";
+      var string = "abcdefghijklmnopqrstuvwxyz";
 
       var stringLength = string.length;
 
@@ -73,7 +73,7 @@ function passwordCriteria() {
 
     if (characterConfirm === "numbers" || characterConfirm === "NUMBERS") {
 
-      const string = "1234567890";
+      var string = "1234567890";
 
       var stringLength = string.length;
 
@@ -88,16 +88,4 @@ function passwordCriteria() {
 
 }
 
-// User clicks button
-
-//button triggers eventListener
-
-// password criteria options are presented
-
-//eventListener runs an anonymous function to create password
-
-// anonymous function creates a password of random numbers and letters
-
-//password is displayed on the "Your secure password" placeholder
-
-// math.random = length of the password
+// add for loop *reference robot-gladiator* for the in depth randomizer function.
