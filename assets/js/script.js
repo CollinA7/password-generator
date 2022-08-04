@@ -24,30 +24,29 @@ var generatePassword = function passwordPrompt() {
 
 }
 
+//  This is the function selected all of the criteria
 function passwordCriteria() {
 
   var lengthPrompt = window.prompt("Please pick a password length bewtween 8 and 128.");
 
   if (lengthPrompt <= 8 || lengthPrompt >= 128) {
     window.alert("Try again. Please enter a number between 8 and 128.");
+
+    passwordCriteria();
   }
 
   if (lengthPrompt >= 8 || lengthPrompt <= 128) {
     
     window.value = lengthPrompt;
-  }
-
-  var specialCharacter = window.confirm("Would you like the password to consist of any special characters?");
-  
-  if (specialCharacter) {
     randomGenerator();
   }
 
+
   function randomGenerator() {
     
-    var characterConfirm = window.prompt("Would you like the password to consist of: upper-case, lower-case, numbers, and/or special characters?");
+    var upperCaseGen = window.confirm("Would you like the password to consist of upper-case letters?");
 
-    if (characterConfirm === "UPPER" || characterConfirm === "upper") {
+    if (upperCaseGen) {
 
       var string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -59,7 +58,9 @@ function passwordCriteria() {
       console.log(randomCharacter);
     }
 
-    if (characterConfirm === "LOWER" || characterConfirm === "lower") {
+    var lowerCaseGen = window.confirm("Would you like the password to contain lower-case letters?")
+
+    if (lowerCaseGen) {
 
       var string = "abcdefghijklmnopqrstuvwxyz";
 
@@ -67,11 +68,13 @@ function passwordCriteria() {
 
       var randomCharacter = string[ Math.floor(Math.random() * stringLength)];
 
-      // invoke the random function here
       console.log(randomCharacter);
+      
     }
 
-    if (characterConfirm === "numbers" || characterConfirm === "NUMBERS") {
+    var numberGen = window.confirm("Would you like to include numbers in the password?")
+
+    if (numberGen) {
 
       var string = "1234567890";
 
@@ -79,12 +82,25 @@ function passwordCriteria() {
 
       var randomCharacter = string[ Math.floor(Math.random() * stringLength)];
 
-      // invoke the random function here
       console.log(randomCharacter);
     }
 
+    var specialGen = window.confirm("Would you like to include special characters?");
 
+    if (specialGen) {
+
+      var string = "!@#$%&*?~"
+
+      var stringLength = string.length;
+
+      var randomCharacter = string[ Math.floor(Math.random() * stringLength)];
+
+      console.log(randomCharacter);
+    }
+    
   }
+
+  
 
 }
 
